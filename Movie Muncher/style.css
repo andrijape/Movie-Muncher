@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+    --back-color: #192b35ea;
+    --color-1: #ffca28;
+    --radius-1: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url(body.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#searchArea {
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid var(--color-1);
+    border-bottom-left-radius: var(--radius-1);
+    border-bottom-right-radius: var(--radius-1);
+    background-color: var(--back-color);
+}
+
+#searchSpan {
+    height: 6vh;
+    width: 40vw;
+    border-radius: var(--radius-1);
+    background-color: var(--back-color);
+    border: none;
+    border-bottom: 3px solid var(--color-1);
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 2rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--color-1);
+}
+
+#searchSpan button {
+    color: var(--color-1);
+    background-color: transparent;
+    border: none;
+    margin-right: 5px;
+    transition: all 0.2s;
+}
+
+button:focus:active {
+    border: none;
+    outline: none;
+    transform: scaleY(0.7);
+}
+
+#searchSpan input {
+    width: 95%;
+    color: var(--color-1);
+    background-color: transparent;
+    border: none;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
+
+#moviesContainer {
+    height: 85vh;
+    width: 80%;
+    position: relative;
+    top: 3vh;
+    margin: 3vh auto;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3%;
+    padding: 1%;
+    background-color: var(--back-color);
+    border-bottom: 3px solid var(--color-1);
+    border-radius: var(--radius-1);
+}
+
+#moviePreview {
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3%;
+}
+
+#movies {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: dense;
+    gap: 2%;
+    overflow-y: scroll;
+    grid-auto-rows: 120px;
+    padding-right: 5px;
+}
+
+#movies::-webkit-scrollbar {
+    width: 3px;
+    scroll-margin-left: 10px;
+}
+   
+#movies::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px var(--back-color);
+}
+   
+#movies::-webkit-scrollbar-thumb {
+    outline: 3px solid;
+    background-color: var(--color-1);
+}
+
+.movie {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    color: var(--color-1);
+    border: 3px solid var(--color-1);
+    border-radius: var(--radius-1);
+}
+
+.movie img {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--radius-1);
+    position: relative;
+    z-index: 3;
+}
+
+.data {
+    color: var(--color-1);
+    font-size: 1.7rem;
+    margin: 10px;
+    word-wrap: break-word;
+    grid-column-start: 2;
+    grid-column-end: 6;
+}
+
+li {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.results {
+    display: block;
+    position: relative;
+    bottom: 1vh;
+    background-color: var(--back-color); 
+    font-size: 1.5rem;
+    color: var(--color-1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #ffca28; 
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px; 
+}
+
+.results:focus {
+    outline: none;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--back-color);
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        background-image: url("body.jpg");
+    }
+
+    #searchSpan input{
+        position: relative;
+        left: 3vw;
+        bottom: 14vh;
+        font-size: 1.5rem;
+    }
+
+    #searchSpan button {
+        position: relative;
+        bottom: 2vh;
+    }
+
+    .results {
+        height: 5vh;
+        position: relative;
+        bottom: 14.1vh;
+        font-size: 1.1rem;
+        padding: 0 5px;
+    }
+
+    .data {
+        font-size: 1.2rem;
+    }
+
+    #movies {
+        display: grid;
+        grid-auto-rows: 95px;
+    }
+}
+
+@media screen and (min-width: 1485px) {
+    #searchSpan input{
+        position: relative;
+        left: 0.5vw;
+        bottom: 1vh;
+        font-size: 2rem;
+    }
+
+    #searchSpan button {
+        position: relative;
+        bottom: 1vh;
+    }
+
+    .results {
+        height: 5vh;
+        position: relative;
+        top: -1.3vh;
+        font-size: 1.1rem;
+        padding: 0 5px;
+    }
+
+    .data {
+        font-size: 1.7rem;
+    }
+
+    #movies {
+        display: grid;
+        grid-auto-rows: 140px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .results {
+        height: 5vh;
+        position: relative;
+        top: -1.3vh;
+        font-size: 1.7rem;
+        padding: 0 5px;
+    }
+
+    #movies {
+        display: grid;
+        grid-auto-rows: 150px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .results {
+        height: 5vh;
+        position: relative;
+        top: -1.3vh;
+        font-size: 1.2rem;
+        padding: 0 5px;
+    }
+
+    #movies {
+        display: grid;
+        grid-auto-rows: 175px;
+    }
+}

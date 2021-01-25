@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Muncher</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/9d3aaadef8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Search Area -->
+  <nav id="searchArea">
+    <span id="searchSpan" class="browser-default"><button id="searchBtn" class="browser-default"><i
+          class="fas fa-search"></i></button><input type="search" class="browser-default" name="search" id="search"
+        placeholder="Search a movie..."></span>
+  </nav>
+
+  <!-- Movies Container -->
+  <div id="moviesContainer">
+    <div id="moviePreview"></div>
+    <div id="movies"></div>
+  </div>
+
+  <!-- Fixed action button -->
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large yellow accent-4 btn tooltipped" data-position="left" data-tooltip="User Stats">
+      <i class="large material-icons">person</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating blue darken-4 btn tooltipped total" data-position="left"
+          data-tooltip="Total Movies Watched"><i class="material-icons">format_list_numbered</i></a></li>
+      <li><a class="btn-floating blue darken-3 btn tooltipped rating" data-position="left"
+          data-tooltip="Average Rating of Movies"><i class="material-icons">poll</i></a></li>
+      <li><a class="btn-floating blue darken-2 btn tooltipped duration" data-position="left"
+          data-tooltip="Total Duration"><i class="material-icons">date_range</i></a></li>
+      <li><a class="btn-floating blue darken-1 btn tooltipped runtime" data-position="left" data-tooltip="Runtime"><i
+            class="material-icons">access_time</i></a></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
